@@ -26,19 +26,26 @@ public class PersonTest {
         }
         System.out.println(per[min]);
         System.out.println(per[max]);
+
+        sortArrayAge(per);
+
+        for(var i:per){
+            System.out.println(i);
+        }
+
+
     }
 
-//    public static Name[] sortArrayAge(Name[] num){
-//        var temp = 0;
-//        for(var i = 0;i < num.length; i++){
-//            for(var j = num.length - 1 ;j > i;j--){
-//                if(num[j].age < num[j-1].age){
-//                    temp = num[j-1].age;
-//                    num[j-1].age = num[j].age;
-//                    num[j].age = temp;
-//                }
-//            }
-//        }
-//        return num;
-//    }
+    public static void sortArrayAge(Person[] num){
+        Person temp = new Person(null,null,0);
+        for(var i = 0;i < num.length; i++){
+            for(var j = num.length - 1 ;j > i;j--){
+                if(num[j].age() < num[j-1].age()){
+                    temp = num[j-1];
+                    num[j-1] = num[j];
+                    num[j] = temp;
+                }
+            }
+        }
+    }
 }

@@ -25,9 +25,9 @@ public class SmartPhone {
         System.out.println("アカウント：" + account.name + "," + account.tel + "," + account.email + "," + account.address);
     }
 
-    public boolean addAddressBook(AddressBook addressBook){
+    public boolean addAddressBook(AddressBook[] addressBook){
         if(addressBooks == null){
-            this.addressBooks = new AddressBook[]{addressBook};
+            this.addressBooks = addressBook;
             return true;
         }else{
             return false;

@@ -14,13 +14,21 @@ public class Main {
         smartPhone.displayDeviceInfo();
         smartPhone.displayMyAccount();
 
-        var addressBook2 = new AddressBook("aaa","111-0000-0000","email.com");
+
+        AddressBook[] addressBook2 ={new AddressBook("aaa","111-0000-0000","email.com"),
+                new AddressBook("bbb","111-0000-0000","email.com")};
         var bool = smartPhone.addAddressBook(addressBook2);
         System.out.println(bool);
 
-        var addressBook3 = new AddressBook("aaa","111-0000-0000","email.com");
-        var bool2 = smartPhone.addAddressBook(addressBook2);
+        AddressBook[] addressBook3 = {new AddressBook("ccc","111-0000-0000","email.com")};
+        var bool2 = smartPhone.addAddressBook(addressBook3);
         System.out.println(bool2);
+
+        System.out.println(smartPhone.addressBooks[0].name);
+
+        for (var i = 0;i < smartPhone.addressBooks.length;i++){
+            System.out.println(smartPhone.addressBooks[i].name);
+        }
 
         var app = new String[]{"line","aaa"};
         smartPhone.installApps(app);
