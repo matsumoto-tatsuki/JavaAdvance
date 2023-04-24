@@ -11,7 +11,8 @@ public class StoneGame {
     public StoneGame(Player[] players){
         this.players = players;
         this.numberOfStonesLeft = totalNumberOfStones;
-        this.playerIndex = 0;
+        this.playerIndex = players.length;
+        System.out.println("num:"+playerIndex);
     }
 
     private boolean judgeEnd(){
@@ -62,19 +63,30 @@ public class StoneGame {
         System.out.println();
         var turn = 0;
         var bool = true;
-        while(bool){
-            System.out.println("-----------------------");
-            System.out.println(players[turn].name + "の番です");
-            bool = !next();
-            turn ^= 1;
-
+        while(true) {
+            for (turn = 0; turn < playerIndex; turn++) {
+                System.out.println("-----------------------");
+                System.out.println(players[turn].name + "の番です");
+                bool = next();
+                if (bool) break;
+            }
+            if (bool) break;
         }
+        System.out.print("winner：");
+        for(var j = 0;j < playerIndex;j++){
+            if(j != turn){
+                players[j].countUpWins();
+                System.out.print(players[j].name + " ");
+            }
+        }
+        System.out.println();
 
-        players[turn].countUpWins();
-        System.out.println("win：" + players[turn].name);
-
+        System.out.print("win数：");
+        for(var j = 0;j < playerIndex;j++){
+            if(j != turn){
+                System.out.print(players[j].wins + " ");
+            }
+        }
+        System.out.println();
     }
-
-
-
 }
