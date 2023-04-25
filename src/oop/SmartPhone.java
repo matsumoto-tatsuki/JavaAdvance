@@ -1,11 +1,13 @@
 package oop;
 
-public class SmartPhone {
+import oop2.App;
+
+public class SmartPhone implements App {
     String model;
     String os;
     Account account;
     AddressBook[] addressBooks;
-    String[] apps;
+    App[] apps;
 
     public SmartPhone(String model,String os){
         this.model = model;
@@ -40,7 +42,18 @@ public class SmartPhone {
         }
     }
 
-    public void installApps(String[] app){
-        this.apps = app;
+
+    public boolean install(App[] apps){
+        if(this.apps == null){
+            this.apps = apps;
+            return  true;
+        }
+        return false;
+    }
+
+    @Override
+    public void start() {
+        System.out.println("start");
+
     }
 }

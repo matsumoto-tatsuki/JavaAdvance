@@ -1,8 +1,10 @@
 package oop.stonegame;
 
+import oop2.App;
+
 import java.util.Scanner;
 
-public class StoneGame {
+public class StoneGame implements App {
     Player[] players;
     final int totalNumberOfStones = 25;
     int numberOfStonesLeft;
@@ -49,6 +51,7 @@ public class StoneGame {
         return true;
     }
 
+    @Override
     public void start(){
         System.out.println("""
                 ------------------------------

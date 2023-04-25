@@ -1,5 +1,7 @@
 package record;
 
+import java.util.Arrays;
+
 public class PersonTest {
     public static void main(String[] args) {
         Person[] per = {
@@ -31,6 +33,12 @@ public class PersonTest {
 
         for(var i:per){
             System.out.println(i);
+        }
+
+        Arrays.sort(per);
+        //System.out.println(Arrays.toString(per));
+        for(var i:per){
+            System.out.println(i.age());
         }
 
 

@@ -1,5 +1,9 @@
 package oop;
 
+import oop.stonegame.Player;
+import oop.stonegame.StoneGame;
+import oop2.App;
+
 public class Main {
 
     public static void main(String[] args){
@@ -30,11 +34,13 @@ public class Main {
             System.out.println(smartPhone.addressBooks[i].name);
         }
 
-        var app = new String[]{"line","aaa"};
-        smartPhone.installApps(app);
-        smartPhone.displayAppList();
-
-
-
+        Player[] players ={
+                new Player("aaa",0),
+                new Player("bbb",0),
+        };
+        var app = new App[]{new StoneGame(players)};
+        smartPhone.install(app);
+        //smartPhone.displayAppList();
+        smartPhone.apps[0].start();
     }
 }
