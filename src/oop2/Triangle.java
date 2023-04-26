@@ -8,6 +8,7 @@ public class Triangle  implements Shape{
         this.bottom = bottom;
         this.height = height;
     }
+
     @Override
     public double calculateArea(){
         return (bottom * height) / 2;

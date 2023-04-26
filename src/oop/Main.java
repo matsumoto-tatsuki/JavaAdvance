@@ -15,16 +15,21 @@ public class Main {
         System.out.println(str);
 
         smartPhone.setAccount(account);
+
         smartPhone.displayDeviceInfo();
         smartPhone.displayMyAccount();
 
 
-        AddressBook[] addressBook2 ={new AddressBook("aaa","111-0000-0000","email.com"),
-                new AddressBook("bbb","111-0000-0000","email.com")};
+        AddressBook[] addressBook2 ={
+                new AddressBook("aaa","111-0000-0000","email.com"),
+                new AddressBook("bbb","111-0000-0000","email.com")
+        };
         var bool = smartPhone.addAddressBook(addressBook2);
         System.out.println(bool);
 
-        AddressBook[] addressBook3 = {new AddressBook("ccc","111-0000-0000","email.com")};
+        AddressBook[] addressBook3 = {
+                new AddressBook("ccc","111-0000-0000","email.com")
+        };
         var bool2 = smartPhone.addAddressBook(addressBook3);
         System.out.println(bool2);
 
@@ -36,11 +41,21 @@ public class Main {
 
         Player[] players ={
                 new Player("aaa",0),
-                new Player("bbb",0),
+                new Player("bbb",0)
         };
-        var app = new App[]{new StoneGame(players)};
+
+        Player[] players2 ={
+                new Player("aaa",0),
+                new Player("bbb",0),
+                new Player("ccc",0)
+        };
+
+        var app = new App[]{
+                new StoneGame(players),
+                new StoneGame(players2)
+        };
         smartPhone.install(app);
         //smartPhone.displayAppList();
-        smartPhone.apps[0].start();
+        smartPhone.apps[1].start();
     }
 }

@@ -2,7 +2,7 @@ package oop;
 
 import oop2.App;
 
-public class SmartPhone implements App {
+public class SmartPhone {
     String model;
     String os;
     Account account;
@@ -37,11 +37,10 @@ public class SmartPhone implements App {
     }
     public void displayAppList(){
         System.out.print("apps：");
-        for(var ap:apps){
-            System.out.print(ap + " ");
+        for(var app:apps){
+            System.out.print(app + " ");
         }
     }
-
 
     public boolean install(App[] apps){
         if(this.apps == null){
@@ -49,11 +48,5 @@ public class SmartPhone implements App {
             return  true;
         }
         return false;
-    }
-
-    @Override
-    public void start() {
-        System.out.println("start");
-
     }
 }

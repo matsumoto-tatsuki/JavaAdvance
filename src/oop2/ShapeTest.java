@@ -7,7 +7,6 @@ public class ShapeTest {
         for(var shape:shapes){
             sum += shape.calculateArea();
         }
-
         return sum;
     }
     public static void main(String[] args){

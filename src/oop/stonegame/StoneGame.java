@@ -53,6 +53,7 @@ public class StoneGame implements App {
 
     @Override
     public void start(){
+        System.out.println();
         System.out.println("""
                 ------------------------------
                 石取りゲームを開始します。
