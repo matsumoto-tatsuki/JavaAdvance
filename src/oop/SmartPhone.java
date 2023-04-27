@@ -1,15 +1,19 @@
 package oop;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import oop2.App;
 
 public class SmartPhone {
-    String model;
-    String os;
+    Model model;
+    Os os;
     Account account;
-    AddressBook[] addressBooks;
-    App[] apps;
+    List<AddressBook> addressBooks = new ArrayList<>();
+    List<App> apps = new ArrayList<>();
 
-    public SmartPhone(String model,String os){
+    public SmartPhone(Model model,Os os){
         this.model = model;
         this.os = os;
     }
@@ -28,8 +32,8 @@ public class SmartPhone {
     }
 
     public boolean addAddressBook(AddressBook[] addressBook){
-        if(addressBooks == null){
-            this.addressBooks = addressBook;
+        if(addressBooks == null || addressBooks.isEmpty()){
+            addressBooks.addAll(Arrays.asList(addressBook));
             return true;
         }else{
             return false;
@@ -42,11 +46,9 @@ public class SmartPhone {
         }
     }
 
-    public boolean install(App[] apps){
-        if(this.apps == null){
-            this.apps = apps;
-            return  true;
+    public void install(App[] apps){
+        if(this.apps == null || this.apps.isEmpty()){
+            this.apps.addAll(Arrays.asList(apps));
         }
-        return false;
     }
 }

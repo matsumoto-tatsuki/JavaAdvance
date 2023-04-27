@@ -25,16 +25,22 @@ public class StoneGame implements App {
     }
 
     private  boolean next(){
-        System.out.print("入力してください：");
-        var sc = new Scanner(System.in);
-        var s1 = sc.nextLine();
-        var num = Integer.parseInt(s1);
+        var num = 0;
+        while (true) {
+            System.out.println("入力してください：");
+            var sc = new Scanner(System.in);
+            var s1 = sc.nextLine();
 
-        while(checkInput(num)){
-            System.out.print("入力してください：");
-            s1 = sc.nextLine();
-            num = Integer.parseInt(s1);
+            try {
+                num = Integer.parseInt(s1);
+                if(!checkInput(num)) {
+                    break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("数値のみ入力できます");
+            }
         }
+
         numberOfStonesLeft -= num;
         for(var i = 0; i< numberOfStonesLeft;i++){
             System.out.print("*");
